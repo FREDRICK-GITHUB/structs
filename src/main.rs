@@ -23,10 +23,10 @@ fn main() {
 
     fn build_user(email: String, username: String) -> User {
         User {
-            email: email,
-            username: username,
-            sign_in_count: 1,
-            active: true,
+            email,
+            username,
+            sign_in_count: 10,
+            active: false,
         }
     }
 
