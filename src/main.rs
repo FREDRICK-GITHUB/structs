@@ -14,6 +14,7 @@ fn main() {
     };
 
     user1.sign_in_count = 3;
+    user1.email = String::from("kamaufredm@gmail.com");
 
     println!("my username is: {}", user1.username);
     println!("my email address is: {}", user1.email);
