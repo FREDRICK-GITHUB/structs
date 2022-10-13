@@ -13,25 +13,24 @@ fn main() {
         active: true,
     };
 
-    user1.sign_in_count = 3;
-    user1.email = String::from("kamaufredm@gmail.com");
+    //this struct shows how we can use some values that were declared in another struct instance by directly referencing that struct
+    let mut user2 = User {
+        email: String::from("fredmainahk"),
+        username: String::from("freddie"),
+        sign_in_count: user1.sign_in_count,
+        active: user1.active,
+    };
 
-    println!("my username is: {}", user1.username);
-    println!("my email address is: {}", user1.email);
-    println!("my sign in count is: {}", user1.sign_in_count);
-    println!("my status is: {}", user1.active);
+    //this implementation show how we can update only some values and reuse others from another struct
+    let mut user3 = User {
+        username: String::from("maina"),
+        email: String::from("kamaufredm@gmail.com"),
+        ..user1
+    };
 
-    fn build_user(email: String, username: String) -> User {
-        User {
-            email,
-            username,
-            sign_in_count: 10,
-            active: false,
-        }
-    }
+    println!("We have two users with 3 user names which are: {} and: {} aand: {}", user1.username, user2.username, user3.username);
 
-    let results =  build_user(user1.email, user1.username);
-    println!("I know this is not the best example but the function results are: {:?}, {:?}, {:?}, {:?}", results.username, results.email, results.active, results.sign_in_count);
+    
    
 }
 
